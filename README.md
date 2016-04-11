@@ -10,6 +10,11 @@ Supports throttling and pagification. (NextToken stuff)
 Examples
 --------
 
+Installation:
+```
+npm i mws-api -S
+```
+
 Initialization:
 
 ```javascript
