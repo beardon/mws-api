@@ -4,7 +4,7 @@
   "description": "Amazon Marketplace Web Services API client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -c test/xml"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,9 @@
     "request": "^2.72.0",
     "xml": "^1.0.1",
     "xml2json": "^0.9.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
   }
 }
