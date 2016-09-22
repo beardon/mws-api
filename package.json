@@ -27,7 +27,7 @@
     "node": ">= 4.0.0"
   },
   "dependencies": {
-    "bluebird": "^3.4.3",
+    "bluebird": "^3.4.4",
     "lodash": "^4.15.0",
     "request": "^2.72.0",
     "xml": "^1.0.1",
