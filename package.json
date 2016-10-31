@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "bluebird": "^3.4.4",
-    "lodash": "^4.16.4",
+    "lodash": "^4.16.5",
     "request": "^2.76.0",
     "xml": "^1.0.1",
     "xml2json": "^0.10.0"
