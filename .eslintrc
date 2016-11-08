@@ -1,0 +1,14 @@
+{
+    "extends": "beardon",
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "eqeqeq": [
+            "error",
+            "always",
+            { "null": "ignore" }
+        ]
+    }
+}

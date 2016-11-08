@@ -19,15 +19,11 @@ Initialization:
 
 ```javascript
 const MWSClient = require('mws-api');
+
 const mws = new MWSClient({
-  accessKeyId: 'lol',
-  secretAccessKey: 'kek',
-  merchantId: 'hue',
-  meta: {
-    retry: true, // retry requests when throttled
-    next: true, // auto-paginate
-    limit: Infinity // only get this number of items (NOT the same as MaxRequestsPerPage)
-  }
+    accessKeyId: 'lol',
+    secretAccessKey: 'kek',
+    merchantId: 'hue'
 });
 ```
 
@@ -35,13 +31,13 @@ Usage:
 
 ```javascript
 
-mws.Feeds.ListOrders({
-  MarketplaceId: 'lel',
-  MaxResultsPerPage: 10,
-  CreatedAfter: new Date(1,1,2015),
-  CreatedBefore: new Date(1,2,2015)
+mws.Orders.ListOrders({
+    MarketplaceId: 'lel',
+    MaxResultsPerPage: 10,
+    CreatedAfter: new Date(1,1,2015),
+    CreatedBefore: new Date(1,2,2015)
 })
 .then(({ result, metadata }) => {
-  // result
+    // result
 });
 ```

@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": 4.2
+      },
+      "whitelist": [
+        "transform-es2015-destructuring",
+        "transform-es2015-parameters"
+      ]
+    }],
+    "stage-0"
+  ]
+}
