@@ -35,7 +35,7 @@ Usage:
 
 ```javascript
 
-mws.Feeds.ListOrders({
+mws.Orders.ListOrders({
   MarketplaceId: 'lel',
   MaxResultsPerPage: 10,
   CreatedAfter: new Date(1,1,2015),
