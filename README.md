@@ -31,6 +31,15 @@ const mws = new MWSClient({
 });
 ```
 
+For other countries, also set the `host` parameter, according to the `MarketPlaceId` you are using, otherwise it leads to `AccessDenied` error. For example:
+```javascript
+...
+const mws = new MWSClient({
+  host: 'mws.amazonservices.co.uk', // .de, .es, .fr, .it, etc
+  ...
+}
+```
+
 Usage:
 
 ```javascript
