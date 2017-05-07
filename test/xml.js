@@ -42,16 +42,12 @@ describe('xml', () => {
             it('should handle a single tracking number', () => {
                 const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_({
                     MessageID: 1,
-                    OrderFulfillment: {
-                      MerchantOrderID: 1234567,
-                      MerchantFulfillmentID: 1234567,
-                      FulfillmentDate: '2002-05-01T15:36:33-08:00',
-                      FulfillmentData: {
-                        CarrierCode: 'UPS',
-                        ShippingMethod: 'Second Day',
-                        ShipperTrackingNumber: '1234567890'
-                      }
-                    }
+                    MerchantOrderID: 1234567,
+                    MerchantFulfillmentID: 1234567,
+                    FulfillmentDate: '2002-05-01T15:36:33-08:00',
+                    CarrierCode: 'UPS',
+                    ShippingMethod: 'Second Day',
+                    ShipperTrackingNumber: '1234567890'
                 });
                 const xml = '<?xml version="1.0" encoding="ISO-8859-1"?><AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>1.01</DocumentVersion></Header><MessageType>OrderFulfillment</MessageType><Message><MessageID>1</MessageID><OrderFulfillment><MerchantOrderID>1234567</MerchantOrderID><MerchantFulfillmentID>1234567</MerchantFulfillmentID><FulfillmentDate>2002-05-01T15:36:33-08:00</FulfillmentDate><FulfillmentData><CarrierCode>UPS</CarrierCode><ShippingMethod>Second Day</ShippingMethod><ShipperTrackingNumber>1234567890</ShipperTrackingNumber></FulfillmentData></OrderFulfillment></Message></AmazonEnvelope>'
 
@@ -61,16 +57,12 @@ describe('xml', () => {
             it('should handle a single tracking number as an array', () => {
                 const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_({
                     MessageID: 1,
-                    OrderFulfillment: {
-                      MerchantOrderID: 1234567,
-                      MerchantFulfillmentID: 1234567,
-                      FulfillmentDate: '2002-05-01T15:36:33-08:00',
-                      FulfillmentData: {
-                        CarrierCode: 'UPS',
-                        ShippingMethod: 'Second Day',
-                        ShipperTrackingNumber: ['1234567890']
-                      }
-                    }
+                    MerchantOrderID: 1234567,
+                    MerchantFulfillmentID: 1234567,
+                    FulfillmentDate: '2002-05-01T15:36:33-08:00',
+                    CarrierCode: 'UPS',
+                    ShippingMethod: 'Second Day',
+                    ShipperTrackingNumber: ['1234567890']
                 });
                 const xml = '<?xml version="1.0" encoding="ISO-8859-1"?><AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>1.01</DocumentVersion></Header><MessageType>OrderFulfillment</MessageType><Message><MessageID>1</MessageID><OrderFulfillment><MerchantOrderID>1234567</MerchantOrderID><MerchantFulfillmentID>1234567</MerchantFulfillmentID><FulfillmentDate>2002-05-01T15:36:33-08:00</FulfillmentDate><FulfillmentData><CarrierCode>UPS</CarrierCode><ShippingMethod>Second Day</ShippingMethod><ShipperTrackingNumber>1234567890</ShipperTrackingNumber></FulfillmentData></OrderFulfillment></Message></AmazonEnvelope>'
 
@@ -80,16 +72,12 @@ describe('xml', () => {
             it('should handle multiple tracking numbers', () => {
                 const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_({
                     MessageID: 1,
-                    OrderFulfillment: {
-                      MerchantOrderID: 1234567,
-                      MerchantFulfillmentID: 1234567,
-                      FulfillmentDate: '2002-05-01T15:36:33-08:00',
-                      FulfillmentData: {
-                        CarrierCode: 'UPS',
-                        ShippingMethod: 'Second Day',
-                        ShipperTrackingNumber: ['1234567890', '1234567899']
-                      }
-                    }
+                    MerchantOrderID: 1234567,
+                    MerchantFulfillmentID: 1234567,
+                    FulfillmentDate: '2002-05-01T15:36:33-08:00',
+                    CarrierCode: 'UPS',
+                    ShippingMethod: 'Second Day',
+                    ShipperTrackingNumber: ['1234567890', '1234567899']
                 });
                 const xml = '<?xml version="1.0" encoding="ISO-8859-1"?><AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>1.01</DocumentVersion></Header><MessageType>OrderFulfillment</MessageType><Message><MessageID>1</MessageID><OrderFulfillment><MerchantOrderID>1234567</MerchantOrderID><MerchantFulfillmentID>1234567</MerchantFulfillmentID><FulfillmentDate>2002-05-01T15:36:33-08:00</FulfillmentDate><FulfillmentData><CarrierCode>UPS</CarrierCode><ShippingMethod>Second Day</ShippingMethod><ShipperTrackingNumber>1234567890</ShipperTrackingNumber><ShipperTrackingNumber>1234567899</ShipperTrackingNumber></FulfillmentData></OrderFulfillment></Message></AmazonEnvelope>'
 
@@ -99,28 +87,20 @@ describe('xml', () => {
             it('should handle a multiple fulfillments', () => {
                 const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_([{
                     MessageID: 1,
-                    OrderFulfillment: {
-                      MerchantOrderID: 1234567,
-                      MerchantFulfillmentID: 1234567,
-                      FulfillmentDate: '2002-05-01T15:36:33-08:00',
-                      FulfillmentData: {
-                        CarrierCode: 'UPS',
-                        ShippingMethod: 'Second Day',
-                        ShipperTrackingNumber: '1234567890'
-                      }
-                    }
+                    MerchantOrderID: 1234567,
+                    MerchantFulfillmentID: 1234567,
+                    FulfillmentDate: '2002-05-01T15:36:33-08:00',
+                    CarrierCode: 'UPS',
+                    ShippingMethod: 'Second Day',
+                    ShipperTrackingNumber: '1234567890'
                 }, {
                     MessageID: 2,
-                    OrderFulfillment: {
-                      MerchantOrderID: 9876543,
-                      MerchantFulfillmentID: 9876543,
-                      FulfillmentDate: '2002-05-01T16:30:33-08:00',
-                      FulfillmentData: {
-                        CarrierCode: 'DHL',
-                        ShippingMethod: 'Second Day',
-                        ShipperTrackingNumber: '1234567890'
-                      }
-                    }
+                    MerchantOrderID: 9876543,
+                    MerchantFulfillmentID: 9876543,
+                    FulfillmentDate: '2002-05-01T16:30:33-08:00',
+                    CarrierCode: 'DHL',
+                    ShippingMethod: 'Second Day',
+                    ShipperTrackingNumber: '1234567890'
                 }]);
                 const xml = '<?xml version="1.0" encoding="ISO-8859-1"?><AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>1.01</DocumentVersion></Header><MessageType>OrderFulfillment</MessageType><Message><MessageID>1</MessageID><OrderFulfillment><MerchantOrderID>1234567</MerchantOrderID><MerchantFulfillmentID>1234567</MerchantFulfillmentID><FulfillmentDate>2002-05-01T15:36:33-08:00</FulfillmentDate><FulfillmentData><CarrierCode>UPS</CarrierCode><ShippingMethod>Second Day</ShippingMethod><ShipperTrackingNumber>1234567890</ShipperTrackingNumber></FulfillmentData></OrderFulfillment></Message><Message><MessageID>2</MessageID><OrderFulfillment><MerchantOrderID>9876543</MerchantOrderID><MerchantFulfillmentID>9876543</MerchantFulfillmentID><FulfillmentDate>2002-05-01T16:30:33-08:00</FulfillmentDate><FulfillmentData><CarrierCode>DHL</CarrierCode><ShippingMethod>Second Day</ShippingMethod><ShipperTrackingNumber>1234567890</ShipperTrackingNumber></FulfillmentData></OrderFulfillment></Message></AmazonEnvelope>';
 
