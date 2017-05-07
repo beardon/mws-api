@@ -1,6 +1,6 @@
 {
   "name": "mws-api",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Amazon Marketplace Web Services API client",
   "main": "index.js",
   "scripts": {
@@ -30,8 +30,7 @@
     "bluebird": "^3.4.7",
     "lodash": "^4.17.4",
     "request": "^2.79.0",
-    "xml": "^1.0.1",
-    "xml2json": "^0.10.0"
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
     "chai": "^3.5.0",
