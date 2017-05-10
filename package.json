@@ -29,7 +29,7 @@
   "dependencies": {
     "bluebird": "^3.4.7",
     "lodash": "^4.17.4",
-    "request": "^2.79.0",
+    "request": "^2.81.0",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
