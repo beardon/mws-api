@@ -36,6 +36,33 @@ describe('xml', () => {
 
                 expect(FeedContent).to.equal(xml);
             });
+
+            it('should handle a multiple orders', () => {
+                const FeedContent = Feeds._POST_ORDER_ACKNOWLEDGEMENT_DATA_([{
+                    MessageID: 1,
+                    AmazonOrderID: '123-4567890-1234567',
+                    MerchantOrderID: '12345',
+                    StatusCode: 'Success',
+                    MerchantIdentifier: '67890',
+                    Item: {
+                        AmazonOrderItemCode: '12345',
+                        MerchantOrderItemID: '54321'
+                    }
+                }, {
+                    MessageID: 2,
+                    AmazonOrderID: '987-6543210-9876543',
+                    MerchantOrderID: '98765',
+                    StatusCode: 'Success',
+                    MerchantIdentifier: '4321',
+                    Item: {
+                        AmazonOrderItemCode: '54321',
+                        MerchantOrderItemID: '12345'
+                    }
+                }]);
+                const xml = '<?xml version="1.0" encoding="ISO-8859-1"?><AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"><Header><DocumentVersion>1.01</DocumentVersion></Header><MessageType>OrderAcknowledgement</MessageType><Message><MessageID>1</MessageID><OrderAcknowledgement><AmazonOrderID>123-4567890-1234567</AmazonOrderID><MerchantOrderID>12345</MerchantOrderID><StatusCode>Success</StatusCode><Item><AmazonOrderItemCode>12345</AmazonOrderItemCode><MerchantOrderItemID>54321</MerchantOrderItemID></Item></OrderAcknowledgement></Message><Message><MessageID>2</MessageID><OrderAcknowledgement><AmazonOrderID>987-6543210-9876543</AmazonOrderID><MerchantOrderID>98765</MerchantOrderID><StatusCode>Success</StatusCode><Item><AmazonOrderItemCode>54321</AmazonOrderItemCode><MerchantOrderItemID>12345</MerchantOrderItemID></Item></OrderAcknowledgement></Message></AmazonEnvelope>';
+
+                expect(FeedContent).to.equal(xml);
+            });
         });
 
         describe('_POST_ORDER_FULFILLMENT_DATA_', () => {
