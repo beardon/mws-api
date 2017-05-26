@@ -3,19 +3,14 @@
 const expect = require('chai').expect;
 
 const Feeds = require('../feeds');
-const MWSClient = require('../index');
 
 describe('xml', () => {
     describe('Feeds', () => {
         describe('_POST_ORDER_ACKNOWLEDGEMENT_DATA_', () => {
             it('should handle 0 items with basic data', () => {
-                const client = new MWSClient({
-                    accessKeyId: 'access',
-                    secretAccessKey: 'secret',
-                    merchantId: '67890'
-                });
-
-                const FeedContent = Feeds._POST_ORDER_ACKNOWLEDGEMENT_DATA_(client, {
+                const FeedContent = Feeds._POST_ORDER_ACKNOWLEDGEMENT_DATA_({
+                  MerchantIdentifier: '67890'
+                }, {
                     MessageID: 1,
                     AmazonOrderID: '123-4567890-1234567',
                     MerchantOrderID: '12345',
@@ -27,13 +22,9 @@ describe('xml', () => {
             });
 
             it('should handle 1 item with basic data', () => {
-                const client = new MWSClient({
-                    accessKeyId: 'access',
-                    secretAccessKey: 'secret',
-                    merchantId: '67890'
-                });
-
-                const FeedContent = Feeds._POST_ORDER_ACKNOWLEDGEMENT_DATA_(client, {
+                const FeedContent = Feeds._POST_ORDER_ACKNOWLEDGEMENT_DATA_({
+                  MerchantIdentifier: '67890'
+                }, {
                     MessageID: 1,
                     AmazonOrderID: '123-4567890-1234567',
                     MerchantOrderID: '12345',
@@ -50,13 +41,9 @@ describe('xml', () => {
             });
 
             it('should handle multiple order acknowledgement', () => {
-                const client = new MWSClient({
-                    accessKeyId: 'access',
-                    secretAccessKey: 'secret',
-                    merchantId: '67890'
-                });
-
-                const FeedContent = Feeds._POST_ORDER_ACKNOWLEDGEMENT_DATA_(client, [{
+                const FeedContent = Feeds._POST_ORDER_ACKNOWLEDGEMENT_DATA_({
+                  MerchantIdentifier: '67890'
+                }, [{
                     MessageID: 1,
                     AmazonOrderID: '123-4567890-1234567',
                     MerchantOrderID: '12345',
@@ -83,13 +70,9 @@ describe('xml', () => {
 
         describe('_POST_ORDER_FULFILLMENT_DATA_', () => {
             it('should handle a single tracking number', () => {
-                const client = new MWSClient({
-                    accessKeyId: 'access',
-                    secretAccessKey: 'secret',
-                    merchantId: '67890'
-                });
-
-                const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_(client, {
+                const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_({
+                  MerchantIdentifier: '67890'
+                }, {
                     MessageID: 1,
                     MerchantOrderID: 1234567,
                     MerchantFulfillmentID: 1234567,
@@ -104,13 +87,9 @@ describe('xml', () => {
             });
 
             it('should handle a single tracking number as an array', () => {
-                const client = new MWSClient({
-                    accessKeyId: 'access',
-                    secretAccessKey: 'secret',
-                    merchantId: '67890'
-                });
-
-                const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_(client, {
+                const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_({
+                  MerchantIdentifier: '67890'
+                }, {
                     MessageID: 1,
                     MerchantOrderID: 1234567,
                     MerchantFulfillmentID: 1234567,
@@ -125,13 +104,9 @@ describe('xml', () => {
             });
 
             it('should handle multiple tracking numbers', () => {
-                const client = new MWSClient({
-                    accessKeyId: 'access',
-                    secretAccessKey: 'secret',
-                    merchantId: '67890'
-                });
-
-                const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_(client, {
+                const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_({
+                  MerchantIdentifier: '67890'
+                }, {
                     MessageID: 1,
                     MerchantOrderID: 1234567,
                     MerchantFulfillmentID: 1234567,
@@ -146,13 +121,9 @@ describe('xml', () => {
             });
 
             it('should handle multiple fulfillments', () => {
-                const client = new MWSClient({
-                    accessKeyId: 'access',
-                    secretAccessKey: 'secret',
-                    merchantId: '67890'
-                });
-
-                const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_(client, [{
+                const FeedContent = Feeds._POST_ORDER_FULFILLMENT_DATA_({
+                  MerchantIdentifier: '67890'
+                }, [{
                     MessageID: 1,
                     MerchantOrderID: 1234567,
                     MerchantFulfillmentID: 1234567,
