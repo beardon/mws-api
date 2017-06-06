@@ -1,6 +1,6 @@
 {
   "name": "mws-api",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Amazon Marketplace Web Services API client",
   "main": "index.js",
   "scripts": {
