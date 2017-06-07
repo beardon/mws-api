@@ -1,6 +1,8 @@
 mws-api
 ======
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/beardon/mws-api.svg)](https://greenkeeper.io/)
+
 Amazon MWS Node.js modules are a mess. This project is based on multiple projects from [this](https://github.com/eibbors/mws-js/network).
 
 Promise based. Only compatible with Node ^4.0.0. (unless someone adds a babel precompilation step)
